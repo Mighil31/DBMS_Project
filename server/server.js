@@ -1,41 +1,22 @@
-var express = require('express');
-var app = express();
-var multer = require('multer')
-var cors = require('cors');
+require("dotenv").config()
+
+const express = require('express')
+const db = require("./db")
+const app = express()
 
 
-app.use(cors())
+app.use(express.json({ extended: false }))
 
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-    cb(null, '../client/public')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname )
-  }
+
+app.get('/', (req, res) => res.send('API running'));
+
+app.use('/api/salesperson', require('./routes/salesperson'));
+app.use('/api/salesclerk', require('./routes/salesclerk'));
+
+//Salesperson route
+
+const port = process.env.PORT
+
+app.listen(port, () => {
+    console.log(`Server running on ${port}`)
 })
-
-
-var upload = multer({ storage: storage }).single('file')
-
-
-app.post('/upload',function(req, res) {
-     
-    upload(req, res, function (err) {
-           if (err instanceof multer.MulterError) {
-               return res.status(500).json(err)
-           } else if (err) {
-               return res.status(500).json(err)
-           }
-      return res.status(200).send(req.file)
-
-    })
-
-});
-
-
-app.listen(8000, function() {
-
-    console.log('App running on port 8000');
-
-});
