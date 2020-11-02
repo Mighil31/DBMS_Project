@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const db = require("../db")
+const db = require("../db");
+const eval_role = require('../middleware/eval-role');
 
-router.get('/customer', async (req, res) => {
+router.get('/customer', eval_role('SC'), async (req, res) => {
 
     try {
         const results = await db.query("select * from customer natural join addr");
@@ -19,7 +20,7 @@ router.get('/customer', async (req, res) => {
     }
 });
 
-router.put('/customer/:id', async (req, res) => {
+router.put('/customer/:id', eval_role('SC'),async (req, res) => {
     try {
         const cust = await db.query("update customer set first_name=$1, last_name=$2 where cust_id=$3 returning *", [ req.body.first_name, req.body.last_name, req.params.id])
         const addr = await db.query("update addr set state_=$1, city=$2, street=$3, pincode=$4 where addr_id=$5 returning *", 
@@ -27,8 +28,23 @@ router.put('/customer/:id', async (req, res) => {
         res.status(200).json({
             status: "success",
             data: {
-                customer: cust.rows[0],
-                cust: addr.rows[0],
+                customer: cust.rows,
+                cust: addr.rows,
+            }
+        })
+    } catch (error) {
+        console.log(error)
+    }
+});
+
+router.get('/customer/orders', eval_role('SC'), async (req, res) => {
+    try {
+        const order = await db.query("select * from order_info natural join order_line natural join customer");
+        // console.log(order);
+        res.status(200).json({
+            status: "success",
+            data: {
+                order: order.rows
             }
         })
     } catch (error) {

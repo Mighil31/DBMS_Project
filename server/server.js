@@ -12,6 +12,11 @@ app.get('/', (req, res) => res.send('API running'));
 
 app.use('/api/salesperson', require('./routes/salesperson'));
 app.use('/api/salesclerk', require('./routes/salesclerk'));
+app.use('/api/warehouse', require('./routes/warehouse'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/auth', require('./routes/auth'));
+
+
 
 //Salesperson route
 
