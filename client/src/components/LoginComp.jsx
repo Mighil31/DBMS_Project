@@ -1,9 +1,9 @@
 import React from 'react';
-// import './css/Login.scss';
+import './css/Login.css';
 
 const LoginComp = () => {
     return (
-        <div>
+        <div className="login__main">
             <div data-aos="fade-right" class="Intro">
                 <h1>
                     Your construction needs,
