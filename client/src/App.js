@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './route/Home'
 import SalesPerson from './route/SalesPerson';
 import Warehouse from './route/Warehouse';
-import BuildingMat from './route/BuildingMat'
+import BuildingMat from './route/BuildingMat';
+import Login from './route/Login';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path='/salesperson' component={SalesPerson} />
           <Route exact path='/warehouse' component={Warehouse} />
           <Route exact path='/buildingmat' component={BuildingMat} />
+          <Route exact path='/login' component={Login} />
         </Switch>
       </Router>
     </div>
