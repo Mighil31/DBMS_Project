@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import './css/Salesperson.css';
 
 const Salesperson = () => {
+
+    // useEffect(() => {
+        
+    //     const data = async () => {
+
+    //         try {
+    //             const response = await 
+    //         } catch (error) {
+                
+    //         }
+    //     }
+        
+    // }, [])
+
     return (
         <div className='container content'>
                 <h3 className='rect-box'>Welcome salesperson. Here are your products</h3>
