@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/Warehouse.css';
+// import './css/Warehouse.css';
 
 const WarehouseComp = () => {
     return (

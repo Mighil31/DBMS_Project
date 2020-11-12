@@ -1,0 +1,688 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.DC .SpNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: none;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.DC .SpNav a {
+  outline: none;
+  font-size: 20px;
+  color: #dadada;
+  text-decoration: none;
+  margin-left: 50px;
+}
+
+.DC .SpNav a::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 0%;
+  border-bottom: 2px solid #dadada;
+}
+
+.DC .SpNav a:hover:after {
+  -webkit-animation: animate 0.2s linear forwards;
+          animation: animate 0.2s linear forwards;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.DC .SpNav .Home {
+  font-size: 30px;
+  font-family: 'Lobster', cursive;
+  margin-left: 2%;
+}
+
+.DC .SpNav section {
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 2%;
+}
+
+.DC .Landing {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.DC .Landing .Hero {
+  width: 100%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: url(../media/images/thomas-lefebvre-gp8BLyaTaA0-unsplash.jpg);
+  background-size: cover;
+  background-position: 0 100%;
+  background-attachment: fixed;
+  color: white;
+  font-size: 50px;
+}
+
+.DC .Landing .Scroll {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 80%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-animation: animateScroll 0.5s ease-in infinite alternate;
+          animation: animateScroll 0.5s ease-in infinite alternate;
+}
+
+.DC .Landing .Scroll img {
+  width: 100px;
+  height: 100px;
+}
+
+@-webkit-keyframes animateScroll {
+  0% {
+    padding-top: 1%;
+  }
+  100% {
+    padding-top: 2%;
+  }
+}
+
+@keyframes animateScroll {
+  0% {
+    padding-top: 1%;
+  }
+  100% {
+    padding-top: 2%;
+  }
+}
+
+.DC .Details {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.DC .Details h2 {
+  font-size: 20px;
+}
+
+.DC .Details p {
+  color: #353535;
+  font-size: 10px;
+}
+
+.DC .Details .Personal section p .Label {
+  font-weight: 600;
+}
+
+.DC .Details .Personal {
+  width: 500px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.DC .Details .Personal a {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  background-color: #353535;
+  border: none;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.DC .Details .Personal a:hover {
+  background-color: #dadada;
+  color: #353535;
+}
+
+.DC .Details .Personal h2 {
+  width: 300px;
+  height: 40px;
+  background: #353535;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.DC .Details .Personal section {
+  width: 500px;
+  height: 200px;
+  background: #e7e7e7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.DC .Details .Personal section p {
+  width: 450px;
+  height: 30px;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-weight: 400;
+  padding-left: 10px;
+  width: 90%;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.DC .Details .Personal section p span {
+  width: 450px;
+}
+
+.DC .Details .Personal section p .Label {
+  width: 100px;
+  padding-right: 10px;
+}
+
+.DC .Details .Personal .UpdateInfo {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #d3ffeb;
+  border-radius: 10px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #353535;
+  display: none;
+  background: #99ebd2;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.DC .Details .Personal .UpdateInfo input {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding-left: 10px;
+  width: 400px;
+  height: 50px;
+}
+
+.DC .Details .Personal .UpdateInfo .Submit {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  background-color: #353535;
+  border: none;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.DC .Details .Personal .UpdateInfo .Submit:hover {
+  background-color: #dadada;
+  color: #353535;
+}
+
+.DC .Details .Personal .UpdateInfo .Close {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: url(../media/icons/clos.jpg);
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.DC .Details .Personal .UpdateInfo .Close:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.DC .Details .Personal .UpdateInfo::before {
+  content: "";
+  width: 200vh;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.DC .Toggle {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 400px;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 10;
+}
+
+.DC .Toggle .Order, .DC .Toggle .Customer {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  background-color: #353535;
+  border: none;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  text-decoration: none;
+  background: #dadada;
+  color: #353535;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.DC .Toggle .Order:hover, .DC .Toggle .Customer:hover {
+  background-color: #dadada;
+  color: #353535;
+}
+
+.DC .Toggle .Order:hover, .DC .Toggle .Customer:hover {
+  background: #dadada;
+  color: #353535;
+}
+
+.DC .Toggle .Active {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  background-color: #353535;
+  border: none;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  text-decoration: none;
+  background: #353535;
+  color: #dadada;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.DC .Toggle .Active:hover {
+  background-color: #dadada;
+  color: #353535;
+}
+
+.DC .Toggle .Active:hover {
+  background: #353535;
+  color: #dadada;
+}
+
+.DC .Refresh {
+  position: fixed;
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  background-color: #353535;
+  border: none;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  text-decoration: none;
+  left: 5px;
+  top: 50%;
+  width: 100px;
+  height: 40px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+}
+
+.DC .Refresh:hover {
+  background-color: #dadada;
+  color: #353535;
+}
+
+.DC .Clerk-Customer, .DC .Clerk-Orders {
+  margin-top: 20vh;
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.DC .Clerk-Customer h1, .DC .Clerk-Orders h1 {
+  color: #353535;
+  width: 80%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: #b7ffb7;
+}
+
+.DC .Clerk-Customer .Customer-details, .DC .Clerk-Customer .Order-details, .DC .Clerk-Orders .Customer-details, .DC .Clerk-Orders .Order-details {
+  width: 80%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-animation: animateDetail 0.5s ease-in-out;
+          animation: animateDetail 0.5s ease-in-out;
+}
+
+.DC .Clerk-Customer .Customer-details .detail, .DC .Clerk-Customer .Order-details .detail, .DC .Clerk-Orders .Customer-details .detail, .DC .Clerk-Orders .Order-details .detail {
+  padding-top: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin-top: 2%;
+  width: 100%;
+  height: 200px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.DC .Clerk-Customer .Customer-details .detail h3, .DC .Clerk-Customer .Order-details .detail h3, .DC .Clerk-Orders .Customer-details .detail h3, .DC .Clerk-Orders .Order-details .detail h3 {
+  margin-bottom: 20px;
+  color: #353535;
+  width: 100%;
+  height: 30px;
+  background: #ffd1d1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.DC .Clerk-Customer .Customer-details .detail p, .DC .Clerk-Customer .Order-details .detail p, .DC .Clerk-Orders .Customer-details .detail p, .DC .Clerk-Orders .Order-details .detail p {
+  color: #353535;
+  width: 100%;
+  height: 30px;
+}
+
+.DC .Clerk-Customer .Customer-details .detail p span, .DC .Clerk-Customer .Order-details .detail p span, .DC .Clerk-Orders .Customer-details .detail p span, .DC .Clerk-Orders .Order-details .detail p span {
+  font-weight: 700;
+}
+
+.DC .Clerk-Customer .Customer-details .detail button, .DC .Clerk-Customer .Order-details .detail button, .DC .Clerk-Orders .Customer-details .detail button, .DC .Clerk-Orders .Order-details .detail button {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  background-color: #353535;
+  border: none;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  text-decoration: none;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  background: #4d5ce7;
+}
+
+.DC .Clerk-Customer .Customer-details .detail button:hover, .DC .Clerk-Customer .Order-details .detail button:hover, .DC .Clerk-Orders .Customer-details .detail button:hover, .DC .Clerk-Orders .Order-details .detail button:hover {
+  background-color: #dadada;
+  color: #353535;
+}
+
+@-webkit-keyframes animateDetail {
+  from {
+    margin-left: 10%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes animateDetail {
+  from {
+    margin-left: 10%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+.DC .OffScreen {
+  display: none;
+}
+/*# sourceMappingURL=departmentClerk.css.map */
