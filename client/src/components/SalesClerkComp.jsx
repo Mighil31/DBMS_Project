@@ -1,18 +1,30 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useState } from 'react';
 import './css/departmentClerk.css';
 
 const SalesClerkComp = () => {
+
+    const [showForm, setShowForm] = useState(false);
+
+    const toggleForm = (e) => {
+        e.preventDefault();
+
+        if(showForm)
+            setShowForm(false)
+        else
+            setShowForm(true)
+    }
+
     return (
         <div className='DC'>
             <header>
                 <nav 
-                data-aos="fade-down"
-                data-aos-easing="ease-out"
+    
                 className="SpNav" >
-                    <a href="#" className="Home">DropTable</a>
+                    <a className="Home">DropTable</a>
                     <section>
-                        <a href="./departmentClerkInfo.html" className="Det">Details</a>
-                        <a href="../signin/signin.html" className="Sout">Sign out</a>
+                        <a  className="Det">Details</a>
+                        <a className="Sout">Sign out</a>
                     </section>
                 </nav>
             </header>
@@ -23,7 +35,9 @@ const SalesClerkComp = () => {
                 </h1>
                 <section
                 data-aos="zoom-out"
-                className="Scroll">
+                className="Scroll"
+                // ref={scroll}
+                >
                     <img src={require("./media/icons/scroll-down.jpg")} />
                 </section>
             </div>
@@ -35,9 +49,14 @@ const SalesClerkComp = () => {
                         <p id="Email"><span className="Label">Email:</span><span className="Value">richardmalkov@hotmail.com</span></p>
                         <p id="Address"><span className="Label">Address:</span><span className="Value">No 52/1, Rajaram street, KK nagar,Delhi-07.</span></p>
                     </section>
-                    <a href="#" className="Update">Update</a>
-                        <form action="" className="UpdateInfo" id="Form">
-                            <button className="Close"></button>
+                    <a onClick={e => toggleForm(e)} className="Update">Update</a>
+                        <form 
+                            action=""  
+                            className="UpdateInfo" 
+                            id="Form"
+                            style={{display: showForm ? 'inherit' : 'none' }}
+                            >
+                            <button onClick={e => toggleForm(e)} className="Close"></button>
                             <input type="text" name="Name" value="" placeholder="name" /><br/>
                             <input type="email" name="Email" value="" placeholder="email" /><br/>
                             <input type="text" name="Address" value="" placeholder="address" /><br/>
