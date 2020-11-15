@@ -1,5 +1,5 @@
 import React from 'react'
-import SalesPersonComp from '../components/SalespersonComp';
+import SalesPersonComp from '../components/salesperson/SalespersonComp';
 import Navbar from '../components/Navbar';
 
 const SalesPerson = () => {

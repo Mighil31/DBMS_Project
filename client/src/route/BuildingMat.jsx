@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BuildingMatComp from '../components/BuildingMatComp';
+import BuildingMatComp from '../components/warehouse/BuildingMatComp';
 import Navbar from '../components/Navbar';
 
 const BuildingMat = () => {

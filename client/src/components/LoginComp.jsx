@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import './css/Login.css';
+import './css/signin.css';
 import { login } from '../actions/auth'
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -36,32 +36,30 @@ const LoginComp = ({ user, login, isAuthenticated }) => {
             return <Redirect to="/salesperson" />;
         else if (user.user_type == 'WS')
             return <Redirect to='/warehouse' />
-        // else if (user.user_type == 'SC')
+        else if (user.user_type == 'SC')
+        return <Redirect to='/salesclerk' />
         
     }
 
     return (
-        <div className="login__main">
-            <div data-aos="fade-right" className="Intro">
+        <div className='login__main'>
+            <div 
+            className="Intro">
                 <h1>
                     Your construction needs,
-                    <br />fulfilled
+                    <br/>fulfilled
                 </h1>
             </div>
-
             <div className="Signin">
-                <span className="Logo">Drop Table</span>
+                <a><span className="Logo">Drop Table</span></a>
                 <form 
-                data-aos="fade-left"
                 className="Form"
                 onSubmit={e => onSubmit(e)}>
                     <section className="Entry">
-                    <input type="username" className="Username" id="user_name" name="user_name" onChange={e => onChange(e)} placeholder="username"/>
-                    <input type="password" className="Password" id="passwd" name="passwd" onChange={e => onChange(e)} placeholder="password"/>
+                    <input type="username" className="Username" id="Username" name="user_name" onChange={e => onChange(e)} placeholder="username" />
+                    <input type="password" className="Password" id="Password" name="passwd" onChange={e => onChange(e)} placeholder="password" />
                     </section>
-                    <a href="#"><button type="submit" className="Sin">Sign in</button></a>
-                    <h3>New user?</h3>
-                    {/* <a href=""><button className="Sup">Sign up</button></a> */}
+                    <a ><button className="Sin">Sign in</button></a>
                 </form>
             </div>
         </div>

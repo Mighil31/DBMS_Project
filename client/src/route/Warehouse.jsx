@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import WarehouseComp from '../components/WarehouseComp'
+import WarehouseComp from '../components/warehouse/WarehouseComp'
 
 const Warehouse = () => {
     return (

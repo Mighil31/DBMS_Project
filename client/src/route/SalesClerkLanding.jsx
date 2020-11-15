@@ -1,5 +1,5 @@
 import React from 'react'
-import SalesClerkComp from '../components/SalesClerkComp';
+import SalesClerkComp from '../components/salesclerk/SalesClerkComp';
 
 const SalesPerson = () => {
     return (

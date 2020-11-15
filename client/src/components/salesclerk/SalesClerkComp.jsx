@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useState } from 'react';
-import './css/departmentClerk.css';
+import '../css/departmentClerk.css';
 
 const SalesClerkComp = () => {
 
@@ -34,11 +34,11 @@ const SalesClerkComp = () => {
                     Welcome back sales clerk
                 </h1>
                 <section
-                data-aos="zoom-out"
+                // data-aos="zoom-out"
                 className="Scroll"
                 // ref={scroll}
                 >
-                    <img src={require("./media/icons/scroll-down.jpg")} />
+                    <img src={require("../media/icons/scroll-down.jpg")} />
                 </section>
             </div>
             <div className="Details">

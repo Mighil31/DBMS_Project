@@ -559,6 +559,7 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background: #b7ffb7;
+  margin-left: 10%;
 }
 
 .DC .Clerk-Customer .Customer-details, .DC .Clerk-Customer .Order-details, .DC .Clerk-Orders .Customer-details, .DC .Clerk-Orders .Order-details {
@@ -684,5 +685,9 @@
 
 .DC .OffScreen {
   display: none;
+}
+
+.DC .detail {
+  margin-left: 25%;
 }
 /*# sourceMappingURL=departmentClerk.css.map */

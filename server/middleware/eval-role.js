@@ -8,6 +8,7 @@ module.exports = function(role) {
     return (req, res, next) => {
         const token = req.header('auth-token');
 
+
         if(!token) {
             return res.status(401).json({
                 msg: "Authorization denied"
@@ -27,6 +28,8 @@ module.exports = function(role) {
             // console.log(req.user)
             next();
         } catch (error) {
+            console.log("asdasdasd")
+
             res.status(401).json({ msg: "Token is not valid" });
         }
     }

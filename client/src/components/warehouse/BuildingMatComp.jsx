@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import axios from 'axios';
-import image from '../apis/image';
+import image from '../../apis/image';
 // import './css/BuildingMat.css'
 
 const BuildingMatComp = (props) => {
