@@ -6,26 +6,8 @@
           box-sizing: border-box;
 }
 
-.WS {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.WS .SpNav {
+.SP .SpNav {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 6vh;
   display: -webkit-box;
@@ -40,15 +22,14 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
-.WS .SpNav a {
+.SP .SpNav a {
   outline: none;
   font-size: 20px;
   color: #dadada;
   text-decoration: none;
-  margin-left: 50px;
 }
 
-.WS .SpNav a::after {
+.SP .SpNav a::after {
   content: "";
   display: block;
   margin: 0 auto;
@@ -56,7 +37,7 @@
   border-bottom: 2px solid #dadada;
 }
 
-.WS .SpNav a:hover:after {
+.SP .SpNav a:hover:after {
   -webkit-animation: animate 0.2s linear forwards;
           animation: animate 0.2s linear forwards;
 }
@@ -79,14 +60,14 @@
   }
 }
 
-.WS .SpNav .Home {
+.SP .SpNav .Home {
   font-size: 30px;
   font-family: 'Lobster', cursive;
   margin-left: 2%;
 }
 
-.WS .SpNav section {
-  width: 70%;
+.SP .SpNav section {
+  width: 50%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,13 +77,10 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   margin-right: 2%;
 }
 
-.WS .Landing {
+.SP .Landing {
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -122,7 +100,7 @@
           justify-content: space-between;
 }
 
-.WS .Landing .Hero {
+.SP .Landing .Hero {
   width: 100%;
   height: 70%;
   display: -webkit-box;
@@ -133,15 +111,15 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background: url(../media/images/chuttersnap-BNBA1h-NgdY-unsplash.jpg);
+  background: url(../media/images/pexels-snapwire-618613.jpg);
   background-size: cover;
-  background-position: 0 100%;
+  background-position: 0px 100%;
   background-attachment: fixed;
   color: white;
   font-size: 50px;
 }
 
-.WS .Landing .Scroll {
+.SP .Landing .Scroll {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -152,7 +130,7 @@
           animation: animateScroll 0.5s ease-in infinite alternate;
 }
 
-.WS .Landing .Scroll img {
+.SP .Landing .Scroll img {
   width: 100px;
   height: 100px;
 }
@@ -175,7 +153,20 @@
   }
 }
 
-.WS .Details .Personal {
+.SP .Details {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.SP .Details .Personal {
   width: 500px;
   height: 400px;
   display: -webkit-box;
@@ -192,7 +183,44 @@
       justify-content: space-around;
 }
 
-.WS .Details .Personal a {
+.SP .Details .Personal .UpdateInfo {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #99ebd2;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #353535;
+  display: none;
+}
+
+.SP .Details .Personal .UpdateInfo input {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding-left: 10px;
+  width: 400px;
+  height: 50px;
+}
+
+.SP .Details .Personal .UpdateInfo .Submit {
   border: none;
   outline: none;
   width: 150px;
@@ -216,15 +244,44 @@
   text-decoration: none;
 }
 
-.WS .Details .Personal a:hover {
+.SP .Details .Personal .UpdateInfo .Submit:hover {
   background-color: #dadada;
   color: #353535;
 }
 
-.WS .Details .Personal h2 {
-  width: 300px;
-  height: 40px;
-  background: #353535;
+.SP .Details .Personal .UpdateInfo .Close {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: url(../media/icons/clos.jpg);
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.SP .Details .Personal .UpdateInfo .Close:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.SP .Details .Personal .UpdateInfo::before {
+  content: "";
+  width: 200vh;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: -1;
+}
+
+.SP .Details .Personal a {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  background-color: #353535;
+  border: none;
   color: #dadada;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,10 +295,36 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-    font-size: 25px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.WS .Details .Personal section {
+.SP .Details .Personal a:hover {
+  background-color: #dadada;
+  color: #353535;
+}
+
+.SP .Details .Personal h2 {
+  width: 300px;
+  height: 40px;
+  background: #353535;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.SP .Details .Personal section {
   width: 500px;
   height: 200px;
   background: #e7e7e7;
@@ -259,7 +342,7 @@
       justify-content: space-around;
 }
 
-.WS .Details .Personal section p {
+.SP .Details .Personal section p {
   width: 450px;
   height: 30px;
   font-size: 20px;
@@ -281,61 +364,19 @@
   border-radius: 10px;
 }
 
-.WS .Details .Personal section p span {
+.SP .Details .Personal section p span {
   width: 450px;
 }
 
-.WS .Details .Personal section p .Label {
+.SP .Details .Personal section p .Label {
   width: 100px;
   padding-right: 10px;
   font-weight: bold;
 }
 
-.WS .Details .Personal .UpdateInfo {
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  border-radius: 10px;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  color: #353535;
-  display: none;
-  background: #99ebd2;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.WS .Details .Personal .UpdateInfo input {
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  padding-left: 10px;
+.SP .Details .CustandInv {
   width: 400px;
-  height: 50px;
-}
-
-.WS .Details .Personal .UpdateInfo .Submit {
-  border: none;
-  outline: none;
-  width: 150px;
-  height: 30px;
-  background-color: #353535;
-  border: none;
-  color: #dadada;
+  height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,113 +389,12 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.WS .Details .Personal .UpdateInfo .Submit:hover {
-  background-color: #dadada;
-  color: #353535;
-}
-
-.WS .Details .Personal .UpdateInfo .Close {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  width: 50px;
-  height: 50px;
-  border: none;
-  background: url(../media/icons/clos.jpg);
-  background-size: cover;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.WS .Details .Personal .UpdateInfo .Close:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.WS .Details .Personal .UpdateInfo::before {
-  content: "";
-  width: 200vh;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
   z-index: -1;
 }
 
-.WS .Inventory {
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.WS .Inventory h1 {
-  text-align: center;
-  width: 100%;
-  height: 60px;
-  margin-top: 10vh;
-  font-size: 40px;
-  color: #353535;
-}
-
-.WS .Inventory .Container {
-  width: 80%;
-  height: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.WS .Inventory .Container .Category {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.WS .Inventory .Container .Category .Imageholder {
+.SP .Details .CustandInv .Cust {
   width: 300px;
   height: 300px;
-}
-
-.WS .Inventory .Container .Category .Imageholder img {
-  width: 300px;
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-}
-
-.WS .Inventory .Container .Category .Text {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -467,28 +407,39 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 100px;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  background: #c7f8c0;
+  background: #e7e7e7;
+  border-radius: 10px;
 }
 
-.WS .Inventory .Container .Category .Text h3 {
-  color: #353535;
-}
-
-.WS .Inventory .Container .Category .Text a {
-  text-decoration: none;
-}
-
-.WS .Inventory .Container .Category .Text a .Browse {
-  border: none;
-  outline: none;
-  width: 150px;
+.SP .Details .CustandInv .Cust h3 {
+  padding-left: 10px;
+  width: 90%;
   height: 30px;
-  background-color: #353535;
-  border: none;
+  background: white;
+  border-radius: 10px;
+  font-weight: 400;
+}
+
+.SP .Details .CustandInv .Cust::before {
+  width: 200px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  content: "Recent customers List";
+  background: #353535;
   color: #dadada;
+  border-radius: 10px;
+}
+
+.SP .Details .CustandInv .Inv {
+  width: 300px;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -501,21 +452,37 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  cursor: pointer;
-  text-decoration: none;
+  background: #e7e7e7;
+  border-radius: 10px;
 }
 
-.WS .Inventory .Container .Category .Text a .Browse:hover {
-  background-color: #dadada;
-  color: #353535;
+.SP .Details .CustandInv .Inv h3 {
+  padding-left: 10px;
+  width: 90%;
+  height: 30px;
+  background: white;
+  border-radius: 10px;
+  font-weight: 400;
 }
 
-.WS .Inventory .Container .Category:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.SP .Details .CustandInv .Inv::before {
+  content: "Recent products List";
+  width: 200px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background: #353535;
+  color: #dadada;
+  border-radius: 10px;
 }
 
-.WS .Products {
+.SP .Inventory {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -535,7 +502,7 @@
   height: 200vh;
 }
 
-.WS .Products h2 {
+.SP .Inventory h2 {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -556,11 +523,13 @@
   color: #353535;
 }
 
-.WS .Products .NewProductData {
+.SP .Inventory .NewProductData {
   position: fixed;
   width: 500px;
   height: 500px;
-  color: #353535;
+  background: #99ebd2;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   left: 50%;
   top: 50%;
@@ -578,11 +547,11 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  color: #353535;
   display: none;
-  background: #a2c2ff;
 }
 
-.WS .Products .NewProductData input {
+.SP .Inventory .NewProductData input {
   border: none;
   outline: none;
   border-radius: 10px;
@@ -591,7 +560,7 @@
   height: 50px;
 }
 
-.WS .Products .NewProductData .Submit {
+.SP .Inventory .NewProductData .Submit {
   border: none;
   outline: none;
   width: 150px;
@@ -615,12 +584,12 @@
   text-decoration: none;
 }
 
-.WS .Products .NewProductData .Submit:hover {
+.SP .Inventory .NewProductData .Submit:hover {
   background-color: #dadada;
   color: #353535;
 }
 
-.WS .Products .NewProductData .Close {
+.SP .Inventory .NewProductData .Close {
   -ms-flex-item-align: end;
       align-self: flex-end;
   width: 50px;
@@ -632,12 +601,12 @@
   border-radius: 50%;
 }
 
-.WS .Products .NewProductData .Close:hover {
+.SP .Inventory .NewProductData .Close:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.WS .Products .NewProductData::before {
+.SP .Inventory .NewProductData::before {
   content: "";
   width: 200vh;
   height: 100vh;
@@ -646,7 +615,7 @@
   z-index: -1;
 }
 
-.WS .Products .AddProduct {
+.SP .Inventory .AddProduct {
   position: fixed;
   border: none;
   outline: none;
@@ -677,28 +646,28 @@
           transform: translateY(-50%);
 }
 
-.WS .Products .AddProduct:hover {
+.SP .Inventory .AddProduct:hover {
   background-color: #dadada;
   color: #353535;
 }
 
-.WS .Products .Products-Container {
+.SP .Inventory .Inv-Container {
   margin-top: 20%;
   width: 100%;
-  height: 150vh;
+  height: 200vh;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -ms-grid-columns: (300px)[auto-fill];
-      grid-template-columns: repeat(auto-fill, 250px);
+      grid-template-columns: repeat(auto-fill, 300px);
   -ms-grid-rows: (150px)[auto-fill];
       grid-template-rows: repeat(auto-fill, 150px);
   gap: 200px;
 }
 
-.WS .Products .Products-Container .Product {
+.SP .Inventory .Inv-Container .Product {
   width: 300px;
   height: 300px;
   display: -webkit-box;
@@ -720,19 +689,19 @@
   transition: 0.5s;
 }
 
-.WS .Products .Products-Container .Product img {
+.SP .Inventory .Inv-Container .Product img {
   width: 200px;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.WS .Products .Products-Container .Product:hover {
+.SP .Inventory .Inv-Container .Product:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.WS .Products .Products-Container .Product button {
+.SP .Inventory .Inv-Container .Product button {
   border: none;
   outline: none;
   width: 150px;
@@ -757,12 +726,12 @@
   width: 100px;
 }
 
-.WS .Products .Products-Container .Product button:hover {
+.SP .Inventory .Inv-Container .Product button:hover {
   background-color: #dadada;
   color: #353535;
 }
 
-.WS .Products .Products-Container .Product .Overlay {
+.SP .Inventory .Inv-Container .Product .Overlay {
   position: absolute;
   height: 300px;
   width: 300px;
@@ -774,7 +743,7 @@
   display: none;
 }
 
-.WS .Products .Products-Container .Product .Overlay .Text {
+.SP .Inventory .Inv-Container .Product .Overlay .Text {
   position: absolute;
   margin-top: 300px;
   height: 300px;
@@ -788,12 +757,12 @@
   z-index: 1;
 }
 
-.WS .Products .Products-Container .Product .Overlay .Text h4, .WS .Products .Products-Container .Product .Overlay .Text p {
+.SP .Inventory .Inv-Container .Product .Overlay .Text h4, .SP .Inventory .Inv-Container .Product .Overlay .Text p {
   padding-top: 10%;
   padding-left: 15%;
 }
 
-.WS .Products .Products-Container .Product .Overlay .Text .btn {
+.SP .Inventory .Inv-Container .Product .Overlay .Text .btn {
   margin-left: 15%;
   margin-top: 10%;
   width: 100px;
@@ -805,8 +774,163 @@
   padding-left: 0;
 }
 
-.WS .Products .Products-Container .Product .Overlay .Text .btn:hover {
+.SP .Inventory .Inv-Container .Product .Overlay .Text .btn:hover {
   background: #353535;
   color: #dadada;
 }
-/*# sourceMappingURL=warehouse.css.map */
+
+.SP .Inventory .Inv-Container::before {
+  position: fixed;
+  content: "";
+  width: 400vh;
+  height: 200vh;
+  border-radius: 50%;
+  background-color: #caffeb;
+  z-index: -1;
+}
+
+.SP .Customer {
+  width: 100%;
+  height: 150vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.SP .Customer h2 {
+  position: absolute;
+  top: -5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin-top: 10%;
+  height: 100px;
+  background-color: #cefca9;
+  color: #353535;
+}
+
+.SP .Customer .Chart-Container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.SP .Customer .Chart-Container .Customer-Chart {
+  width: 80%;
+  height: 50%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #e7e7e7;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.SP .Customer .Chart-Container .Customer-Chart .Title {
+  background: #8d8d8d;
+}
+
+.SP .Customer .Chart-Container .Customer-Chart .Title h3 {
+  width: 33.33%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.SP .Customer .Chart-Container .Customer-Chart .Title, .SP .Customer .Chart-Container .Customer-Chart .Record {
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.SP .Customer .Chart-Container .Customer-Chart .Title span, .SP .Customer .Chart-Container .Customer-Chart .Record span {
+  width: 33.33%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.SP .Customer .Chart-Container .Customer-Chart .Record {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.SP .Customer .Chart-Container .Customer-Chart .Record:hover {
+  background: #353535;
+  color: #dadada;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.SP .Customer .Chart-Container .Refresh {
+  width: 100px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #dadada;
+  color: #353535;
+}
+
+.SP .Customer .Chart-Container .Refresh:hover {
+  background: #353535;
+  color: #dadada;
+}
+/*# sourceMappingURL=salesperson.css.map */

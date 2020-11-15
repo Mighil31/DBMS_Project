@@ -1,14 +1,14 @@
 import React from 'react'
-import BuildingMatComp from '../../../components/warehouse/categories/BuildingMatComp';
+import ElectricalComp from '../../../components/warehouse/categories/ElectricalComp';
 import WSNavbar from '../../../components/warehouse/WSNavbar';
 
-const Warehouse = () => {
+const Electrical = () => {
     return (
         <div>
             <WSNavbar />
-            <BuildingMatComp />
+            <ElectricalComp />
         </div>
     )
 }
 
-export default Warehouse
+export default Electrical

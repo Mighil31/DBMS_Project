@@ -61,6 +61,7 @@ const BuildingMatComp=()=>{
                                 prod_name={element.prod_name} 
                                 price={element.price} 
                                 category={category}
+                                brand={element.brand}
                                 stock={element.stock}
                                 image={element.image}
                             />

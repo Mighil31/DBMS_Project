@@ -1,13 +1,27 @@
 import React from 'react';
+import CurrencyFormat from 'react-currency-format';
 
 const Product=(props)=>{
 
     return(
         <section class="Product" >
-                <h3>Product Name: {props.prod_name}</h3>
+                <h3>{props.brand} {props.prod_name}</h3>
                 <img src={require("../../media/images/products/" + props.image)}/>
                 <p>Stock left: {props.stock}</p>
-                <p>Stock left: {props.price}</p>
+                <CurrencyFormat
+
+                    renderText={(value) => (
+                        <>
+                            <p>Price: <strong>{value}</strong></p>
+                        </>
+                    )}  
+                    decimalScale={1}
+                    value={props.price}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    prefix={"₹"}
+
+                />
                 <button>Details</button>
                 <span class="Overlay">
                     <section class="Text">

@@ -7,9 +7,9 @@ const NavBar=()=>{
             <header>
                 <nav
                 className="SpNav">
-                    <a href="#" className="Home">DropTable</a>
+                    <a href="/" className="Home">DropTable</a>
                     <section>
-                    <a href="./warehouseInventory.html" className="Inv">Inventory</a>
+                    <a href="/warehouse/inventory" className="Inv">Inventory</a>
                     <a href="../signin/signin.html" className="Sout">Sign out</a>
                     </section>
                 </nav>

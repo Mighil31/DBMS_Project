@@ -65,7 +65,7 @@ const WSInventory=()=>{
                         </div>
                         <section className="Text">
                             <h3>Electricals</h3>
-                            <a name="electricals" onClick={e => redirect(e)}><button className="Browse">Browse</button></a>
+                            <a name="electricals" onClick={e => redirect(e)}><button name="electrical" className="Browse">Browse</button></a>
                         </section>
                     </section>
 
@@ -75,7 +75,7 @@ const WSInventory=()=>{
                         </div>
                         <section className="Text">
                             <h3>Pipes and Fittings</h3>
-                            <a name="pipes" onClick={e => redirect(e)}><button className="Browse">Browse</button></a>
+                            <a name="pipes" onClick={e => redirect(e)}><button name="pipes" className="Browse">Browse</button></a>
                         </section>
                     </section>
 

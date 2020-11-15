@@ -4,16 +4,16 @@ import '../../css/warehouse.css';
 import axios from 'axios';
 import Product from './Product';
 
-const ElectricalComp=()=>{
+const PipesComp=()=>{
 
-    const [electrical, setElectrical] = useState([]);
+    const [pipes, setPipes] = useState([]);
 
     useEffect(() => {
 
         (async () => {
             try {
-                const electrical = await axios.get('http://localhost:8000/api/warehouse/electrical');
-                setElectrical(electrical.data.data.results);
+                const pipes = await axios.get('http://localhost:8000/api/warehouse/pipes_fitting');
+                setPipes(pipes.data.data.results);
 
             } catch (err) {
                 
@@ -25,7 +25,7 @@ const ElectricalComp=()=>{
     return(
         <div className="WS">
             <div class="Products" id="Pipe">
-                <h2>Hey Richard, These are the electrical products.
+                <h2>Hey Richard, These are the pipes products.
                 </h2>
 
 
@@ -39,7 +39,7 @@ const ElectricalComp=()=>{
                 </form>
 
                 <div class="Products-Container">
-                    { electrical && electrical.map(element => {
+                    { pipes && pipes.map(element => {
 
                         
                         return (
@@ -48,8 +48,8 @@ const ElectricalComp=()=>{
                                 prod_name={element.prod_name} 
                                 price={element.price} 
                                 stock={element.stock}
-                                brand={element.brand}
                                 image={element.image}
+                                brand={element.brand}
                             />
                         )
                     })}
@@ -61,4 +61,4 @@ const ElectricalComp=()=>{
 }
 
 
-export default ElectricalComp;
+export default PipesComp;
