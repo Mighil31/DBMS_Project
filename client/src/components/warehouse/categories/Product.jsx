@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Product=(props)=>{
+
     return(
         <section class="Product" >
                 <h3>Product Name: {props.prod_name}</h3>
-                <img src=""/>
+                <img src={require("../../media/images/products/" + props.image)}/>
                 <p>Stock left: {props.stock}</p>
                 <p>Stock left: {props.price}</p>
                 <button>Details</button>
