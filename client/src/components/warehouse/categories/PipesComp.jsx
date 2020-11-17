@@ -12,7 +12,7 @@ const PipesComp=()=>{
 
         (async () => {
             try {
-                const pipes = await axios.get('http://localhost:8000/api/warehouse/pipes_fitting');
+                const pipes = await axios.get('/api/warehouse/pipes_fitting');
                 setPipes(pipes.data.data.results);
 
             } catch (err) {

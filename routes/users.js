@@ -38,7 +38,6 @@ router.post('/', [
                     user_type
                 }
             }
-            console.log(payload)
 
             jwt.sign(
                 payload,

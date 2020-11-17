@@ -17,7 +17,7 @@ const SalespersonInventoryComp = ({ isAuthenticated, user}) => {
     useEffect(() => {
         (async () => {
             try {
-                const spProds = await axios.get('http://localhost:8000/api/salesperson/' + user.id)
+                const spProds = await axios.get('/api/salesperson/' + user.id)
             
                 setSPDetails(spProds.data.data.results)
 

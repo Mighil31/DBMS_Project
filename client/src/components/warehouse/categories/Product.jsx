@@ -13,7 +13,7 @@ const Product=(props)=>{
         try {
             const body = { finalStock }
             console.log(body);
-            const res = await axios.put('http://localhost:8000/api/warehouse/product/' + props.id, body);
+            const res = await axios.put('/api/warehouse/product/' + props.id, body);
             console.log(res.data.data.results[0])
             setStock(res.data.data.results[0].stock);
             setOverlay(false)

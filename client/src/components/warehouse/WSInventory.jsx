@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import '../css/warehouse.css';
 import axios from 'axios';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -37,7 +36,7 @@ const WSInventory=()=>{
         formData.image = formData.form_image.split("").reverse().join("").split("\\")[0].split('').reverse().join('');
 
         try {
-            const res = await axios.post('http://localhost:8000/api/warehouse/product', formData);
+            const res = await axios.post('/api/warehouse/product', formData);
             setShowForm(false);
 
         } catch (error) {
@@ -48,7 +47,6 @@ const WSInventory=()=>{
 
     const redirect = e => {
         const res ="/warehouse/inventory/" + e.target.name;
-        console.log(res);
         history.push(res);
         
     }
@@ -61,7 +59,6 @@ const WSInventory=()=>{
                 className="NewProductData" 
                 id="Form"
                 style={{display: showForm ? "inherit": "none" }}
-                onSubmit={e => onSubmit(e)}
                 >
                 <button onClick={e => setShowForm(false)} className="Close"></button>
                 <input onChange={e => onChange(e) } type="text" name="prod_name" value={formData.prod_name} placeholder="product name"/><br/>
@@ -76,7 +73,7 @@ const WSInventory=()=>{
                     </select>
                 </section>
                 <input onChange={e => onChange(e) } type="text" name="stock" value={formData.stock} placeholder="stock left"/><br/>
-                <button type="submit" className="Submit">Add Product</button>
+                <button onClick={e => onSubmit(e)} type="submit" className="Submit">Add Product</button>
             </form>
 
             <div className="Inventory">

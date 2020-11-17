@@ -13,7 +13,7 @@ const BuildingMatComp=()=>{
 
         (async () => {
             try {
-                const buildingmat = await axios.get('http://localhost:8000/api/warehouse/building_materials');
+                const buildingmat = await axios.get('/api/warehouse/building_materials');
                 setBuildingMat(buildingmat.data.data.results);
 
             } catch (err) {

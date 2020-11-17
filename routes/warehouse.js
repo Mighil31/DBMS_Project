@@ -40,7 +40,6 @@ router.post('/product', async (req, res) => {
 router.put('/product/:id', async (req, res) => {
 
     try {
-        console.log(req.body)
         const results = await db.query("update products set stock=$1 where prod_id=$2 returning *", [req.body.finalStock, req.params.id]);
         
         res.json({

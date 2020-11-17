@@ -15,8 +15,7 @@ const SalespersonCustComp = ({ isAuthenticated, user}) => {
     useEffect(() => {
         (async () => {
             try {
-                const spCusts = await axios.get('http://localhost:8000/api/salesperson/' + user.id + '/customer');
-                console.log(spCusts)
+                const spCusts = await axios.get('/api/salesperson/' + user.id + '/customer');
                 setSPCustomer(spCusts.data.data.results)
 
             } catch (err) {
@@ -40,10 +39,8 @@ const SalespersonCustComp = ({ isAuthenticated, user}) => {
                             <h3>Status</h3>
                         </section>
                         <div>
-                            { SPCustomer && console.log(SPCustomer)}
                             { SPCustomer && SPCustomer.map(element => {
                                 let date = new Date(element.date);
-                                console.log(date)
                                 let curDate = new Date();
                                 const name = `${element.first_name} ${element.last_name}`;
                                 const status = curDate.getMonth()- date.getMonth() > 2 ? "Inactive" : "Active";

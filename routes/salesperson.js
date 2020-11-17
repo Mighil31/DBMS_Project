@@ -25,13 +25,11 @@ router.get('/:id/customer', eval_role('SP'), async (req, res) => {
         let customers = []
 
         for (const el of results.rows) {
-            console.log(el.cust_id);
             const res = await db.query("select * from customer where cust_id=$1", [el.cust_id]);
             res.rows[0].date = el.date_;
             customers.push(res.rows[0]);
         };
 
-        console.log(customers)
 
         res.json({
             status: "success",

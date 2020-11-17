@@ -12,7 +12,7 @@ const ElectricalComp=()=>{
 
         (async () => {
             try {
-                const electrical = await axios.get('http://localhost:8000/api/warehouse/electrical');
+                const electrical = await axios.get('/api/warehouse/electrical');
                 setElectrical(electrical.data.data.results);
 
             } catch (err) {

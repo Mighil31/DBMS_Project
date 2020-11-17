@@ -20,9 +20,9 @@ const SalesClerkInfo = () => {
     useEffect(() => {
         (async () => {
             try {
-                const customer = await axios.get('http://localhost:8000/api/salesclerk/customer');
-                const orders = await axios.get('http://localhost:8000/api/salesclerk/customer/orders');
-                const price = await axios.get('http://localhost:8000/api/salesclerk/customer/orders/price');
+                const customer = await axios.get('/api/salesclerk/customer');
+                const orders = await axios.get('/api/salesclerk/customer/orders');
+                const price = await axios.get('/api/salesclerk/customer/orders/price');
 
                 // console.log(customer.data.data.customer)
                 setCustomerDetails(customer.data.data.customer);
