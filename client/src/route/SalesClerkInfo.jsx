@@ -71,6 +71,7 @@ const SalesClerkInfo = () => {
                                 name={name} 
                                 address={address} 
                                 ph_no={element.ph_no}
+                                image={element.dp}
                             />
                         )
                     })}
