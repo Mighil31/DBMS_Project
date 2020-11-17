@@ -3,8 +3,11 @@ import { useEffect } from 'react';
 import '../../css/warehouse.css';
 import axios from 'axios';
 import Product from './Product';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-const ElectricalComp=()=>{
+const ElectricalComp=({ user })=>{
 
     const [electrical, setElectrical] = useState([]);
 
@@ -22,10 +25,16 @@ const ElectricalComp=()=>{
 
     }, [])
 
+    if(user)
+    {
+        if(user.user_type !== "WS")
+            return <Redirect to='/login' />
+    }
+
     return(
         <div className="WS">
             <div class="Products" id="Pipe">
-                <h2>Hey Richard, These are the electrical products.
+                <h2>These are the electrical products.
                 </h2>
 
 
@@ -60,5 +69,13 @@ const ElectricalComp=()=>{
     );
 }
 
+ElectricalComp.propTypes = {
+    user: PropTypes.object,
+  };
 
-export default ElectricalComp;
+const mapStateToProps = state => ({
+    user: state.auth.user
+});
+
+
+export default connect(mapStateToProps, null)(ElectricalComp);

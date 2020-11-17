@@ -5,7 +5,6 @@ import axios from 'axios'
 const Product=(props)=>{
 
     const [ showOverlay, setOverlay ] = useState(false);
-
     const [stock, setStock] = useState(props.stock);
     const [ finalStock, setFinalStock ] = useState(props.stock);
     const changeStock = async (e) => {

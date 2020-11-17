@@ -49,20 +49,20 @@ function App() {
             <Route exact path='/login' component={Login} />
             <Route exact path='/' component={Home} />
 
-            <Route exact path='/salesperson' component={SalesPerson} />
+            <PrivateRoute exact path='/salesperson' component={SalesPerson} />
             <PrivateRoute exact path='/salesperson/inventory' component={SalesPersonInventory} />
             <PrivateRoute exact path='/salesperson/customer' component={SalesPersonCustomer} />
             
-            <Route exact path='/warehouse' component={Warehouse} />
-            <Route exact path='/warehouse/inventory' component={WarehouseInventory} />
-            <Route exact path='/warehouse/inventory/buildingmat' component={BuildingMat} />
-            <Route exact path='/warehouse/inventory/electrical' component={Electrical} />
-            <Route exact path='/warehouse/inventory/pipes' component={Pipes} />
+            <PrivateRoute exact path='/warehouse' component={Warehouse} />
+            <PrivateRoute exact path='/warehouse/inventory' component={WarehouseInventory} />
+            <PrivateRoute exact path='/warehouse/inventory/buildingmat' component={BuildingMat} />
+            <PrivateRoute exact path='/warehouse/inventory/electrical' component={Electrical} />
+            <PrivateRoute exact path='/warehouse/inventory/pipes' component={Pipes} />
 
             {/* <Route exact path='/buildingmat' component={BuildingMat} /> */}
 
-            <Route exact path='/salesclerk' component={SalesClerkLanding} />
-            <Route exact path='/salesclerk/info' component={SalesClerkInfo} />
+            <PrivateRoute exact path='/salesclerk' component={SalesClerkLanding} />
+            <PrivateRoute exact path='/salesclerk/info' component={SalesClerkInfo} />
             
           </Switch>
         </Router>

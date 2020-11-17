@@ -15,6 +15,7 @@ const SalespersonCustComp = ({ isAuthenticated, user}) => {
     useEffect(() => {
         (async () => {
             try {
+                console.log(axios.defaults.headers.common['auth-token'])
                 const spCusts = await axios.get('/api/salesperson/' + user.id + '/customer');
                 setSPCustomer(spCusts.data.data.results)
 
@@ -23,9 +24,12 @@ const SalespersonCustComp = ({ isAuthenticated, user}) => {
             }
         })()
     }, [])
-
-    if(!isAuthenticated)
-     return <Redirect to='/login' />
+    
+    if(user)
+    {
+        if(user.user_type !== "SP")
+            return <Redirect to='/login' />
+    }
 
     return (
         <div className='SP'>

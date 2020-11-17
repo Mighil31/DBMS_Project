@@ -1,7 +1,17 @@
 import React from 'react';
 import '../css/warehouse.css';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';        
 
-const WSHome=()=>{
+const WSHome=({ user })=>{
+
+    if(user)
+    {
+        if(user.user_type !== "WS")
+            return <Redirect to='/login' />
+    }
+
     return(
         <div className='WS'>
             <div className="Landing">
@@ -15,7 +25,7 @@ const WSHome=()=>{
             <div className="Details">
                     <div
                     className="Personal">
-                        <h2>Your personal details</h2>
+                        {/* <h2>Your personal details</h2>
                         <section>
                         <p id="Name"><span className="Label">Name:</span><span className="Value">Richard Malkov</span></p>
                         <p id="Email"><span className="Label">Email:</span><span className="Value">richardmalkov@hotmail.com</span></p>
@@ -28,11 +38,19 @@ const WSHome=()=>{
                                 <input type="email" name="Email" value="" placeholder="email"/><br/>
                                 <input type="text" name="Address" value="" placeholder="address"/><br/>
                                 <button type="submit" className="Submit">Update</button>
-                            </form>
+                            </form> */}
                     </div>
             </div>
         </div>
     );
 }
 
-export default WSHome;
+WSHome.propTypes = {
+    user: PropTypes.object,
+  };
+
+const mapStateToProps = state => ({
+    user: state.auth.user
+});
+
+export default connect(mapStateToProps, null)(WSHome);

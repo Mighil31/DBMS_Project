@@ -27,13 +27,16 @@ const SalespersonInventoryComp = ({ isAuthenticated, user}) => {
         })()
     }, [])
 
-    if(!isAuthenticated)
-     return <Redirect to='/login' />
+    if(user)
+    {
+        if(user.user_type !== "SP")
+            return <Redirect to='/login' />
+    }
 
     return (
         <div className='SP'>
             <div class="Inventory">
-                 <h2>Hey Richard,take a look at your stocks.</h2>
+                <h2>Take a look at your stocks.</h2>
 
                 <form action="" class="NewProductData" id="Form">
                     <button class="Close"></button>
@@ -54,7 +57,7 @@ const SalespersonInventoryComp = ({ isAuthenticated, user}) => {
                                 />
                             )
                         })}
-                    <button class="AddProduct">Add new product</button>
+                    {/* <button class="AddProduct">Add new product</button> */}
                 </div>
             </div>
         </div>

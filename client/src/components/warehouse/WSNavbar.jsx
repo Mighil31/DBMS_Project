@@ -1,7 +1,10 @@
 import React from 'react';
 import '../css/warehouse.css';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
+import { connect } from 'react-redux'
 
-const NavBar=()=>{
+const NavBar=({ logout })=>{
     return(
         <div className='WS'>
             <header>
@@ -10,7 +13,7 @@ const NavBar=()=>{
                     <a href="/" className="Home">DropTable</a>
                     <section>
                     <a href="/warehouse/inventory" className="Inv">Inventory</a>
-                    <a href="../signin/signin.html" className="Sout">Sign out</a>
+                    <a onClick={logout} className="Sout">Sign out</a>
                     </section>
                 </nav>
             </header>
@@ -18,4 +21,9 @@ const NavBar=()=>{
     )
 }
 
-export default NavBar;
+NavBar.propTypes = {
+    logout: PropTypes.func.isRequired,
+};
+
+
+export default connect(null, { logout })(NavBar);

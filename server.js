@@ -3,10 +3,15 @@ const cors = require("cors")
 const express = require('express')
 const db = require("./db")
 const app = express()
-
+const path = require('path');
 
 app.use(express.json({ extended: false }))
 app.use(cors())
+
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "client/build")))
+}
 
 
 app.get('/', (req, res) => res.send('API running'));

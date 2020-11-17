@@ -3,8 +3,12 @@ import { useEffect } from 'react';
 import '../../css/warehouse.css';
 import axios from 'axios';
 import Product from './Product';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-const PipesComp=()=>{
+
+const PipesComp=({ user })=>{
 
     const [pipes, setPipes] = useState([]);
 
@@ -20,12 +24,19 @@ const PipesComp=()=>{
             }
         })();
 
-    }, [])
+    }, []);
+
+    if(user)
+    {
+        if(user.user_type !== "WS")
+            return <Redirect to='/login' />
+    }
+
 
     return(
         <div className="WS">
             <div class="Products" id="Pipe">
-                <h2>Hey Richard, These are the pipes products.
+                <h2>These are the pipes products.
                 </h2>
 
 
@@ -60,5 +71,13 @@ const PipesComp=()=>{
     );
 }
 
+PipesComp.propTypes = {
+    user: PropTypes.object,
+  };
 
-export default PipesComp;
+const mapStateToProps = state => ({
+    user: state.auth.user
+});
+
+
+export default connect(mapStateToProps, null)(PipesComp);

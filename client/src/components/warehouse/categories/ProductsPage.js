@@ -5,7 +5,7 @@ import React from 'react';
 const ProductsPage=()=>{
     return(
         <div class="Products" id="Pipe">
-        <h2>Hey Richard,take a look at our stocks.
+        <h2>Take a look at our stocks.
         </h2>
 
 

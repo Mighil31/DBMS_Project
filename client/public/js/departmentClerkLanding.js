@@ -4,8 +4,6 @@ const FormCloseButton=document.querySelector('.DC .Details .Personal .UpdateInfo
 const Form = document.getElementById("Form");
 const PersonalDetails=document.querySelector('.DC .Details .Personal');
 const UpdateFormButton=document.querySelector('.DC .Details .Personal .UpdateInfo .Submit');
-console.log(UpdateFormButton);
-console.log(scroll);
 function scrollFunction(){
     
     if(window.pageYOffset>300){

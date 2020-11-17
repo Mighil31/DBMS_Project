@@ -7,7 +7,6 @@ const SalesPersonProduct = (props) => {
                 <h3>{props.prod_name}</h3>
                 <img src={require("../media/images/products/" + props.image)} />
                 <p>Stock left: 10</p>
-                <button>Details</button>
                 <span class="Overlay">
                     <section class="Text">
                         <h4>

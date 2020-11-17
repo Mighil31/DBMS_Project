@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import '../css/warehouse.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-
-
-const WSInventory=()=>{
+const WSInventory=({ user })=>{
 
     const [ showForm, setShowForm] = useState(false);
 
@@ -27,6 +28,12 @@ const WSInventory=()=>{
                 ...formData,
                 [e.target.name]: e.target.value
             })
+    }
+
+    if(user)
+    {
+        if(user.user_type !== "WS")
+            return <Redirect to='/login' />
     }
 
     
@@ -122,6 +129,13 @@ const WSInventory=()=>{
     );
 }
 
+WSInventory.propTypes = {
+    user: PropTypes.object,
+  };
+
+const mapStateToProps = state => ({
+    user: state.auth.user
+});
 
 
-export default WSInventory;
+export default connect(mapStateToProps, null)(WSInventory);

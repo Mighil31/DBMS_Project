@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const db = require("../db")
+const db = require("../db");
+const eval_role = require('../middleware/eval-role');
 
-router.get('/:category', async (req, res) => {
+router.get('/:category', eval_role("WS"), async (req, res) => {
 
     try {
         const results = await db.query("select * from products where category=$1", [req.params.category]);
@@ -19,7 +20,7 @@ router.get('/:category', async (req, res) => {
     }
 });
 
-router.post('/product', async (req, res) => {
+router.post('/product', eval_role("WS"), async (req, res) => {
 
     try {
         const results = await db.query("insert into products (brand, prod_name, price, category, stock, image) values ($1, $2, $3, $4, $5, $6) returning *", 
@@ -37,7 +38,7 @@ router.post('/product', async (req, res) => {
     }
 });
 
-router.put('/product/:id', async (req, res) => {
+router.put('/product/:id', eval_role("WS"), async (req, res) => {
 
     try {
         const results = await db.query("update products set stock=$1 where prod_id=$2 returning *", [req.body.finalStock, req.params.id]);

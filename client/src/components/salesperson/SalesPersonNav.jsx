@@ -23,7 +23,7 @@ const SalesPersonNav = ({ logout }) => {
 
 SalesPersonNav.propTypes = {
     logout: PropTypes.func.isRequired,
-  };
+};
 
 
 export default connect(null, { logout })(SalesPersonNav)

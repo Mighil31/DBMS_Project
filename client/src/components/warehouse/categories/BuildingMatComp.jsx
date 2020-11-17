@@ -3,8 +3,11 @@ import { useEffect } from 'react';
 import '../../css/warehouse.css';
 import axios from 'axios';
 import Product from './Product';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-const BuildingMatComp=()=>{
+const BuildingMatComp=({ user })=>{
 
     const [buildingmat, setBuildingMat] = useState([]);
     
@@ -23,10 +26,16 @@ const BuildingMatComp=()=>{
 
     }, [])
 
+    if(user)
+    {
+        if(user.user_type !== "WS")
+            return <Redirect to='/login' />
+    }
+
     return(
         <div className="WS">
             <div className="Products" id="Pipe">
-                <h2>Hey Richard,take a look at our stocks.
+                <h2>Take a look at our stocks.
                 </h2>
 
                 <div className="Products-Container">
@@ -50,5 +59,13 @@ const BuildingMatComp=()=>{
     );
 }
 
+BuildingMatComp.propTypes = {
+    user: PropTypes.object,
+  };
 
-export default BuildingMatComp;
+const mapStateToProps = state => ({
+    user: state.auth.user
+});
+
+
+export default connect(mapStateToProps, null)(BuildingMatComp);

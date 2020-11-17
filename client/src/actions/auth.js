@@ -10,7 +10,7 @@ export const loadUser = () => async dispatch => {
 
     try {
         const res = await axios.get('/api/auth');
-
+        console.log(res)
         dispatch({
             type: USER_LOADED,
             payload: res.data
@@ -25,10 +25,10 @@ export const loadUser = () => async dispatch => {
 // Login User
 export const login = (user_name, passwd) => async dispatch => {
     const body = { user_name, passwd };
-  
+    console.log(body);
     try {
       const res = await axios.post('/api/auth', body);
-  
+        console.log(res.data)
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data
@@ -37,13 +37,7 @@ export const login = (user_name, passwd) => async dispatch => {
       dispatch(loadUser());
     } catch (err) {
       const errors = err.response.data.errors;
-      // if (errors) {
-      //   errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
-      // }
-  
-      // dispatch({
-      //   type: LOGIN_FAIL
-      // });
+      console.log(errors)
     }
 };
 
