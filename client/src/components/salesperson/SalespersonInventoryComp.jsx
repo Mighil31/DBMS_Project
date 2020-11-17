@@ -13,7 +13,6 @@ const SalespersonInventoryComp = ({ isAuthenticated, user}) => {
     const [ SPDetails, setSPDetails ] = useState([]);
 
     
-    console.log(user.id)
     useEffect(() => {
         (async () => {
             try {

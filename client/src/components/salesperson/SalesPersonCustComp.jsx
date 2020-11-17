@@ -15,7 +15,6 @@ const SalespersonCustComp = ({ isAuthenticated, user}) => {
     useEffect(() => {
         (async () => {
             try {
-                console.log(axios.defaults.headers.common['auth-token'])
                 const spCusts = await axios.get('/api/salesperson/' + user.id + '/customer');
                 setSPCustomer(spCusts.data.data.results)
 

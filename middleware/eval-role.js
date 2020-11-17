@@ -8,7 +8,6 @@ module.exports = function(role) {
     return (req, res, next) => {
         const token = req.header('auth-token');
 
-        console.log("P",token)
         if(!token) {
             return res.status(401).json({
                 msg: "Authorization denied"
@@ -18,7 +17,6 @@ module.exports = function(role) {
         try {
             const decoded = jwt.verify(token, process.env.SECRET);
             req.user = decoded.user;
-            console.log(decoded.user.user_type)
             if(decoded.user.user_type != role) {
                 return res.status(401).json({
                     msg: "You are not authorized"

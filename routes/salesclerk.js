@@ -7,7 +7,6 @@ router.get('/customer', eval_role('SC'), async (req, res) => {
 
     try {
         const results = await db.query("select * from customer natural join addr natural join cust_phone");
-        console.log(results.rows)
         res.json({
             status: "success",
             results: results.rows.length,

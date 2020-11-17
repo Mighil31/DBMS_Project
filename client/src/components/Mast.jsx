@@ -8,7 +8,7 @@ const Mast = () => {
                     <div className="container">
                         <h1 className="masthead-heading mb-0">Drop Table;</h1>
                         <h2 className="masthead-subheading mb-0">Your construction needs, fulfilled</h2>
-                        <a href='/' className="btn btn-primary btn-xl rounded-pill mt-5">Get started</a>
+                        <a href='/login' className="btn btn-primary btn-xl rounded-pill mt-5">Login</a>
                     </div>
                 </div>
                 <div className="bg-circle-1 bg-circle"></div>
