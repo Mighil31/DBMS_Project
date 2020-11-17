@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import './App.css';
 import Login from './route/Login';
 
-import Home from './route/Home'
+import Home from './route/Home';
+import { LOGOUT } from './actions/types';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 import SalesPerson from './route/salesperson/SalesPersonLanding';
+import SalesPersonInventory from './route/salesperson/SalesPersonInventory';
+import SalesPersonCustomer from './route/salesperson/SalesPersonCust';
 
 import SalesClerkLanding  from './route/SalesClerkLanding'
 import SalesClerkInfo  from './route/SalesClerkInfo';
@@ -18,8 +22,25 @@ import Pipes from './route/Warehouse/category/Pipes';
 
 import { Provider } from 'react-redux';
 import store from './store';
+import { loadUser } from './actions/auth'
+import setAuthToken from './utils/setAuthToken'
+
 
 function App() {
+
+  useEffect(() => {
+    // check for token in LS
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
+    store.dispatch(loadUser());
+
+    // log user out from all tabs if they log out in one tab
+    window.addEventListener('storage', () => {
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
+  }, []);
+
   return (
     <div >
       <Provider store={store}>
@@ -29,7 +50,9 @@ function App() {
             <Route exact path='/' component={Home} />
 
             <Route exact path='/salesperson' component={SalesPerson} />
-
+            <PrivateRoute exact path='/salesperson/inventory' component={SalesPersonInventory} />
+            <PrivateRoute exact path='/salesperson/customer' component={SalesPersonCustomer} />
+            
             <Route exact path='/warehouse' component={Warehouse} />
             <Route exact path='/warehouse/inventory' component={WarehouseInventory} />
             <Route exact path='/warehouse/inventory/buildingmat' component={BuildingMat} />

@@ -556,7 +556,7 @@
   color: #353535;
 }
 
-.WS .Products .NewProductData {
+.WS .NewProductData {
   position: fixed;
   width: 500px;
   height: 500px;
@@ -582,7 +582,22 @@
   background: #a2c2ff;
 }
 
-.WS .Products .NewProductData input {
+.WS .NewProductData .category {
+  display: flex;
+  height: 50px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.WS .NewProductData .category select{
+  width: 200px;
+  outline: none;
+  height: 40px;
+  border: none;
+
+}
+
+.WS .NewProductData input {
   border: none;
   outline: none;
   border-radius: 10px;
@@ -591,7 +606,7 @@
   height: 50px;
 }
 
-.WS .Products .NewProductData .Submit {
+.WS .NewProductData .Submit {
   border: none;
   outline: none;
   width: 150px;
@@ -615,12 +630,12 @@
   text-decoration: none;
 }
 
-.WS .Products .NewProductData .Submit:hover {
+.WS .NewProductData .Submit:hover {
   background-color: #dadada;
   color: #353535;
 }
 
-.WS .Products .NewProductData .Close {
+.WS .NewProductData .Close {
   -ms-flex-item-align: end;
       align-self: flex-end;
   width: 50px;
@@ -632,12 +647,12 @@
   border-radius: 50%;
 }
 
-.WS .Products .NewProductData .Close:hover {
+.WS .NewProductData .Close:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.WS .Products .NewProductData::before {
+.WS .NewProductData::before {
   content: "";
   width: 200vh;
   height: 100vh;
@@ -646,7 +661,7 @@
   z-index: -1;
 }
 
-.WS .Products .AddProduct {
+.WS .AddProduct {
   position: fixed;
   border: none;
   outline: none;
@@ -677,7 +692,7 @@
           transform: translateY(-50%);
 }
 
-.WS .Products .AddProduct:hover {
+.WS .AddProduct:hover {
   background-color: #dadada;
   color: #353535;
 }
@@ -695,10 +710,12 @@
       grid-template-columns: repeat(auto-fill, 250px);
   -ms-grid-rows: (150px)[auto-fill];
       grid-template-rows: repeat(auto-fill, 150px);
-  gap: 200px;
+  gap: 300px;
 }
 
 .WS .Products .Products-Container .Product {
+  margin-top: 10%;
+  margin-left: 10%;
   width: 300px;
   height: 300px;
   display: -webkit-box;
@@ -720,6 +737,16 @@
   transition: 0.5s;
 }
 
+.WS .Products .Products-Container .Product h3 {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.WS .Products .Products-Container .Product p {
+  font-size: 14px;
+  font-weight: 100;
+}
+
 .WS .Products .Products-Container .Product img {
   width: 200px;
   height: 200px;
@@ -736,6 +763,7 @@
   border: none;
   outline: none;
   width: 150px;
+  margin-bottom: 5px;
   height: 30px;
   background-color: #353535;
   border: none;
@@ -769,15 +797,13 @@
   background: rgba(0, 0, 0, 0.8);
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  opacity: 1;
   overflow-y: hidden;
-  display: none;
 }
 
 .WS .Products .Products-Container .Product .Overlay .Text {
   position: absolute;
-  margin-top: 300px;
-  height: 300px;
+  margin-top: 100px;
+  height: 200px;
   width: 300px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -786,11 +812,65 @@
   transition: all 0.5s ease;
   background-color: #e7e7e7;
   z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.WS .Products .Products-Container .Product .Overlay .Text h4, .WS .Products .Products-Container .Product .Overlay .Text p {
-  padding-top: 10%;
-  padding-left: 15%;
+.WS .Products .Products-Container .Product .Overlay .Text .details {
+  width: 350px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.WS .Products .Products-Container .Product .Overlay .Text .UpdateStock {
+  width: 100%;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.WS .Products .Products-Container .Product .Overlay .Text .UpdateStock input {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.WS .Products .Products-Container .Product .Overlay .Text .UpdateStock h3 {
+  color: #353535;
+}
+
+.WS .Products .Products-Container .Product .Overlay .Text .UpdateStock section {
+  width: 210px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .WS .Products .Products-Container .Product .Overlay .Text .btn {
@@ -809,4 +889,45 @@
   background: #353535;
   color: #dadada;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+.Product button {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 30px;
+  background-color: #353535;
+  border: none;
+  color: #dadada;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100px;
+}
+
+.Product button:hover {
+  background-color: #dadada;
+  color: #353535;
+}
+
+/*# sourceMappingURL=ProductComponent.css.map */
 /*# sourceMappingURL=warehouse.css.map */

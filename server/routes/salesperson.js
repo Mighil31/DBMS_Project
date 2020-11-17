@@ -10,7 +10,7 @@ router.get('/:id', eval_role('SP'), async (req, res) => {
             status: "success",
             results: results.rows.length,
             data: {
-                addr: results.rows
+                results: results.rows
             }
         })
     } catch (error) {
@@ -20,15 +20,15 @@ router.get('/:id', eval_role('SP'), async (req, res) => {
 
 router.get('/:id/customer', eval_role('SP'), async (req, res) => {
     try {
-        const results = await db.query("select distinct cust_id from order_products natural join sp_prod natural join order_line where emp_id=$1", [req.params.id]);
+        const results = await db.query("select distinct cust_id, date_ from order_products natural join sp_prod natural join order_line natural join order_info where emp_id=$1", [req.params.id]);
         
         let customers = []
 
         for (const el of results.rows) {
             console.log(el.cust_id);
             const res = await db.query("select * from customer where cust_id=$1", [el.cust_id]);
-
-            customers.push(res.rows);
+            res.rows[0].date = el.date_;
+            customers.push(res.rows[0]);
         };
 
         console.log(customers)
@@ -36,7 +36,7 @@ router.get('/:id/customer', eval_role('SP'), async (req, res) => {
         res.json({
             status: "success",
             data: {
-                customers
+                results: customers
             }
         })
 
@@ -44,6 +44,8 @@ router.get('/:id/customer', eval_role('SP'), async (req, res) => {
         console.log(error)
     }
 });
+
+
 
 
 module.exports = router;

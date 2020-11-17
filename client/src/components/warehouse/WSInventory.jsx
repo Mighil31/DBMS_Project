@@ -4,32 +4,47 @@ import '../css/warehouse.css';
 import axios from 'axios';
 import { Redirect, useHistory } from 'react-router-dom';
 
+
+
 const WSInventory=()=>{
+
+    const [ showForm, setShowForm] = useState(false);
 
     let history = useHistory();
 
-    // const [buildingMat, setBuildingMat] = useState([]);
-    // const [electrical, setElectrical] = useState([]);
-    // const [pipesFittings, setPipesFittings] = useState([]);
+    const [ formData , setFormData ] = useState({
+        "prod_name": "",
+        "brand": "",
+        "form_image": "",
+        "image": "",
+        "price": 0,
+        "category": "electrical",
+        "stock": 0
+    })
 
-    // useEffect(() => {
+    const onChange = (e) => {
 
-    //     (async () => {
-    //         try {
-    //             const buildingRes = await axios.get('http://localhost:8000/api/warehouse/building_materials');
-    //             const electricalRes = await axios.get('http://localhost:8000/api/warehouse/electrical');
-    //             const pipesRes = await axios.get('http://localhost:8000/api/warehouse/pipes_fitting');
+            setFormData({
+                ...formData,
+                [e.target.name]: e.target.value
+            })
+    }
 
-    //             // console.log(customer.data.data.customer)
-    //             setBuildingMat(buildingRes.data.data.results);
-    //             setElectrical(electricalRes.data.data.results);
-    //             setPipesFittings(pipesRes.data.data.results);
+    
+    const onSubmit = async (e) =>{
+        e.preventDefault();
 
-    //         } catch (err) {
-                
-    //         }
-    //     })()
-    // })
+        formData.image = formData.form_image.split("").reverse().join("").split("\\")[0].split('').reverse().join('');
+
+        try {
+            const res = await axios.post('http://localhost:8000/api/warehouse/product', formData);
+            setShowForm(false);
+
+        } catch (error) {
+            
+        }
+
+    }
 
     const redirect = e => {
         const res ="/warehouse/inventory/" + e.target.name;
@@ -40,6 +55,29 @@ const WSInventory=()=>{
 
     return(
         <div className="WS">
+
+            <form 
+                action="" 
+                className="NewProductData" 
+                id="Form"
+                style={{display: showForm ? "inherit": "none" }}
+                onSubmit={e => onSubmit(e)}
+                >
+                <button onClick={e => setShowForm(false)} className="Close"></button>
+                <input onChange={e => onChange(e) } type="text" name="prod_name" value={formData.prod_name} placeholder="product name"/><br/>
+                <input onChange={e => onChange(e) } type="text" name="brand" value={formData.brand} placeholder="product brand"/><br/>
+                Upload image:<input onChange={e => onChange(e) } type="file" name="form_image" value={formData.form_image} placeholder="product image"/><br/>
+                <input onChange={e => onChange(e) } type="text" name="price" value={formData.price} placeholder="price"/><br/>
+                <section className="category">
+                    <select value={formData.category} onChange={e => onChange(e)} name="category" id="category">
+                        <option value="electrical">Electrical</option>
+                        <option value="building_materials">Building Material</option>
+                        <option value="pipes_fitting">Pipes and Fittings</option>
+                    </select>
+                </section>
+                <input onChange={e => onChange(e) } type="text" name="stock" value={formData.stock} placeholder="stock left"/><br/>
+                <button type="submit" className="Submit">Add Product</button>
+            </form>
 
             <div className="Inventory">
                 <h1
@@ -80,6 +118,8 @@ const WSInventory=()=>{
                     </section>
 
                 </div>
+                <button onClick={e => showForm ? setShowForm(false): setShowForm(true)} className="AddProduct">Add new product</button>     
+
             </div>
         </div>
     );

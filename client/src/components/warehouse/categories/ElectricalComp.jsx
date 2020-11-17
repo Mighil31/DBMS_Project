@@ -45,6 +45,7 @@ const ElectricalComp=()=>{
                         return (
                             <Product
                                 key={element.prod_id} 
+                                id={element.prod_id}
                                 prod_name={element.prod_name} 
                                 price={element.price} 
                                 stock={element.stock}
@@ -54,7 +55,6 @@ const ElectricalComp=()=>{
                         )
                     })}
                 </div>
-                <button class="AddProduct">Add new product</button>
             </div>
         </div>
     );

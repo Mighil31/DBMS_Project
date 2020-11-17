@@ -1,16 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
 
-const SalesPersonNav = () => {
+const SalesPersonNav = ({ logout }) => {
     return (
         <div className='SP'>
             <header>
                 <nav 
-                class="SpNav">
+                className="SpNav">
                     <a href="#" class="Home">DropTable</a>
                     <section>
                         <a href="/salesperson/inventory" class="Inv">Inventory</a>
                         <a href="/salesperson/customer" class="Cust">Customers</a>
-                        <a href="/login" class="Sout">Sign out</a>
+                        <a onClick={logout} href="#!" class="Sout">Sign out</a>
                     </section>
                 </nav>
             </header>
@@ -18,4 +21,9 @@ const SalesPersonNav = () => {
     )
 }
 
-export default SalesPersonNav
+SalesPersonNav.propTypes = {
+    logout: PropTypes.func.isRequired,
+  };
+
+
+export default connect(null, { logout })(SalesPersonNav)

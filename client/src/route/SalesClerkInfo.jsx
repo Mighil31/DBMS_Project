@@ -86,7 +86,7 @@ const SalesClerkInfo = () => {
                 <div className="Order-details">
                 { 
                     orderDetails && orderPrice && orderDetails.map(element => {
-                        // console.log(element)
+                        let date = new Date(element.date_)
                         const name = `${element.first_name} ${element.last_name}`;
                         const address = `${element.street}, ${element.city}, ${element.state_} - ${element.pincode}`;
                         let price = orderPrice.filter(obj => {
@@ -99,7 +99,7 @@ const SalesClerkInfo = () => {
                                 id={element.order_id}
                                 name={name} 
                                 address={address} 
-                                date={element.date_}
+                                date={date}
                                 order_status={element.order_status}
                                 price={price[0] ? price[0].sum : null}
                             />

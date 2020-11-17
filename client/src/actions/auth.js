@@ -2,9 +2,9 @@ import axios from 'axios';
 import {
     USER_LOADED,
     AUTH_ERROR,
-    LOGIN_SUCCESS
+    LOGIN_SUCCESS,
+    LOGOUT
 } from './types';
-
 
 export const loadUser = () => async dispatch => {
 
@@ -37,7 +37,6 @@ export const login = (user_name, passwd) => async dispatch => {
       });
   
       dispatch(loadUser());
-      console.log("Suckcess")
     } catch (err) {
       const errors = err.response.data.errors;
       console.log(errors)
@@ -50,3 +49,6 @@ export const login = (user_name, passwd) => async dispatch => {
       // });
     }
 };
+
+// Logout
+export const logout = () => ({ type: LOGOUT });

@@ -8,7 +8,7 @@ const OrderDetails = (props) => {
             <p><span>Order Name:</span>{props.name}</p>
             <p><span>Order Order:</span>{props.address}</p>
             <p><span>Order total:</span>{props.price}</p>
-            <p><span>Order Date:</span>{props.date}</p>
+            <p><span>Order Date:</span>{props.date.getDate()}/{props.date.getMonth()}/{props.date.getFullYear()}</p>
             <p><span>Order Status:</span>{props.order_status}</p>
     
         </div>
