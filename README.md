@@ -7,7 +7,9 @@ The OMS is implemented as an easy to use website where client-side scripting is 
 
 ### Business Rules
 (1) One shipment contains one order.
+
 (2) To have three different users – Salesperson, Sales department clerks, and Warehouse supervisors.
+
 (3) In the website, each user has access only to his/her functionality.
 
 ### Need and Motivation
