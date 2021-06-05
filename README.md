@@ -1,7 +1,5 @@
 ## DBMS_Project - Order Management System
 
-This project was built as a part of the Database Management System course during my 5th semester.
-
 ### Abstract
 Our Order Management System is for a company that sells construction materials to customers who buy different products. Each customer can have more than one address and is assigned to a default salesperson who is a liaison between the customer and the company. The company sells multiple products. When a customer orders more than one product at a time, all order items are logically grouped in an order line. 
 
